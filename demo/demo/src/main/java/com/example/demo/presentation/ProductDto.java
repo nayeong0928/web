@@ -1,9 +1,18 @@
 package com.example.demo.presentation;
 
+
+import jakarta.validation.constraints.NotNull;
+
 public class ProductDto {
     private Long id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private int price;
+
+    @NotNull
     private int amount;
 
     public Long getId() {

@@ -13,15 +13,18 @@ public class SimpleProductService {
 
     private ListProductRepository listProductRepository;
     private ModelMapper modelMapper;
+    private ValidationService validationService;
 
-    public SimpleProductService(ListProductRepository listProductRepository, ModelMapper modelMapper) {
+    public SimpleProductService(ListProductRepository listProductRepository, ModelMapper modelMapper, ValidationService validationService) {
         this.listProductRepository = listProductRepository;
         this.modelMapper=modelMapper;
+        this.validationService=validationService;
     }
 
     public ProductDto add(ProductDto productDto){
         // 새로운 product 생성
         Product product= modelMapper.map(productDto, Product.class);
+        validationService.checkValid(product);      // 유효성 체크
 
         // 생성한 product 저장
         Product savedProduct= listProductRepository.add(product);
