@@ -10,10 +10,10 @@ public class ProductDto {
     private String name;
 
     @NotNull
-    private int price;
+    private Integer price;
 
     @NotNull
-    private int amount;
+    private Integer amount;
 
     public Long getId() {
         return id;
@@ -23,15 +23,23 @@ public class ProductDto {
         return name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public int getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
     public void setId(Long id){
         this.id=id;
+    }
+
+    public ProductDto(){}
+
+    public ProductDto(String name, Integer price, Integer amount) {
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
     }
 }

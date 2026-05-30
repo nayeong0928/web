@@ -14,11 +14,11 @@ public class Product {
 
     @Max(1_000_000)
     @Min(0)
-    private int price;
+    private Integer price;
 
     @Max(9_999)
     @Min(0)
-    private int amount;
+    private Integer amount;
 
     public void setName(String name) {
         this.name = name;
@@ -36,11 +36,11 @@ public class Product {
         return name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public int getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
